@@ -5,7 +5,7 @@
     <div class="pt-6">
       <navTabs
         :data="navTabsList"
-        v-on:switchTab="tab => (this.navTabsList.current = tab)"
+        v-on:switchTab="tab => (this.navTabsList.current = tab.name)"
       />
 
       <keep-alive>
@@ -23,12 +23,14 @@ export default {
   components: {
     navTabs,
     GlassState: () => import('./components/glassState-component.vue'),
+    DiffList: () => import('./components/diffList-component'),
   },
   data() {
     return {
       navTabsList: {
         items: [
           { name: 'GlassState', niceName: 'Стаканы' },
+          { name: 'DiffList', niceName: 'Выбрать символ' },
         ],
         current: 'GlassState',
       },
