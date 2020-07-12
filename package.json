@@ -44,5 +44,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "publicPath": "/test-task-binance-api/"
+  "publicPath": "/dist/"
 }
