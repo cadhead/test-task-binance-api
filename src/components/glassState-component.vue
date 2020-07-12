@@ -4,10 +4,10 @@
     <hr>
     <div class="wrapper">
       <div class="tile is-ancestor">
-        <div class="tile">
+        <div class="tile is-child">
           <glassStateTable :items="glass.bids"><p class="title">Bids</p></glassStateTable>
         </div>
-        <div class="tile">
+        <div class="tile is-child">
           <glassStateTable :items="glass.asks"><p class="title">Asks</p></glassStateTable>
         </div>
       </div>
