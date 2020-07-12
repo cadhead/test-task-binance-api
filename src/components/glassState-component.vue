@@ -55,8 +55,10 @@ export default {
       this.socket = this.$binanceAPI.subscribe(this.symbol);
       this.socket.onmessage = async (event) => {
         const data = JSON.parse(event.data);
-        const asks = data.data.a ? data.data.a.filter((item) => item[1] !== 0) : [];
-        const bids = data.data.a ? data.data.b.filter((item) => item[1] !== 0) : [];
+        const [asks, bids] = [
+          data.data.a ? data.data.a.filter((item) => item[1] !== 0) : [],
+          data.data.a ? data.data.b.filter((item) => item[1] !== 0) : [],
+        ];
 
         asks.reverse();
         bids.reverse();

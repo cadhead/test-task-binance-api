@@ -8,10 +8,7 @@ export default {
   },
   subscribe(symbol) {
     const ws = new WebSocket(
-      `wss://stream.binance.com:9443/stream?streams=${symbol}@depth@1000ms`,
-
-      // АПИ даёт выбор между 1000 и 100 мс,
-      // не вижу смысла пилить костыли таймаутом и делать 500.
+      `wss://stream.binance.com:9443/stream?streams=${symbol.toLowerCase()}@depth@1000ms`,
     );
 
     return ws;
